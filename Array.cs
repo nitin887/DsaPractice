@@ -134,8 +134,7 @@ class Revision
 # Level 6: Sliding Window
 
 | Question                                   | Concept Used           |
-| ------------------------------------------ | ----------------------         |
-| Longest subarray with sum K                | Sliding Window         |
+| ------------------------------------------ | ----------------------              |
 | Maximum element in every window            | Deque + Sliding Window |
 | Longest substring with K distinct elements | Sliding Window         |
 | Minimum size subarray sum                  | Variable Window        |
@@ -149,38 +148,35 @@ class Revision
    */
    static void Main()
    {
-      int[] arr = [1, 2, 6, 7, 8];
-      int k = 9;
-
-      // Sliding Window approach for Longest Subarray with Sum K
-      // Works for arrays with non-negative elements
-      int left = 0;
-      int sum = 0;
-      int maxLength = 0;
-
-      for (int right = 0; right < arr.Length; right++)
+      int[] arr = [1, 2, 6, 7, 8, 9];
+      Queue<int> maximum = new Queue<int>();
+      int max = 0;
+      int k = 3;
+      for (int i = 0; i < k; i++)
       {
-         // Expand window: add current element to sum
-         sum += arr[right];
-
-         // Shrink window from left if sum exceeds k
-         while (sum > k && left <= right)
+         int current = arr[i];
+         if (max < current)
          {
-            sum -= arr[left];
-            left++;
-         }
-
-         // If sum equals k, update max length
-         if (sum == k)
-         {
-            int currentLength = right - left + 1;
-            if (currentLength > maxLength)
-            {
-               maxLength = currentLength;
-            }
+            max = current;
          }
       }
+      maximum.Enqueue(max);
 
-      Console.WriteLine("Longest subarray length with sum " + k + ": " + maxLength);
+      for (int i = k; i < arr.Length; i++)
+      {
+         int current = arr[i];
+         if (max < current)
+         {
+            max = current;
+         }
+
+      }
+      maximum.Enqueue(max);
+
+      foreach (int x in maximum)
+      {
+         Console.WriteLine(x);
+      }
+
    }
 }
