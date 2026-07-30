@@ -17,11 +17,12 @@ class QuickSorts
     }
     static void Quicksort(int[] arr, int low, int high)
     {
-        if (low < high)
+        while (low < high)
         {
             int pivot = Pivot(arr, low, high);
             Quicksort(arr, low, pivot - 1);
             Quicksort(arr, pivot + 1, high);
+            low++;
         }
 
     }

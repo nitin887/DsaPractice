@@ -16,12 +16,13 @@ class MergeSorts
     }
     static void MergeSort(int[] arr, int low, int high)
     {
-        if (low < high)
+        while (low < high)
         {
             int mid = low + (high - low) / 2;
             MergeSort(arr, low, mid);
             MergeSort(arr, mid + 1, high);
             Merge(arr, low, mid, high);
+            low++;
         }
 
 
