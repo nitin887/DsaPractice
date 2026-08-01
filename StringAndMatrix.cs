@@ -202,7 +202,6 @@ class StringAndMatrix
 
 | Question                                           | Concept Used               |
 | -------------------------------------------------- | -------------------------- |
-| Count vowels and consonants                        | Character Processing       |
 | Count digits, alphabets, and special characters    | Character Classification   |
 | Convert lowercase to uppercase                     | ASCII Manipulation         |
 | Reverse a string                                   | Two Pointers               |
@@ -216,23 +215,28 @@ class StringAndMatrix
        */
     static void Main()
     {
-        string name = "nitin";
-        int vowels = 0;
-        int consonants = 0;
+        string name = "nitin@123";
+        int digits = 0;
+        int alphabets = 0;
+        int specialcharacter = 0;
         for (int i = 0; i < name.Length; i++)
         {
-            if (name[i] == 'a' || name[i] == 'e' || name[i] == 'i' || name[i] == 'o' || name[i] == 'u')
+            if (name[i] == '#' || name[i] == '!' || name[i] == '$' || name[i] == '@')
             {
-                vowels++;
-
+                specialcharacter++;
+            }
+            else if (name[i] == '1' || name[i] == '2' || name[i] == '3')
+            {
+                digits++;
             }
             else
             {
-                consonants++;
+                alphabets++;
             }
 
         }
-        Console.WriteLine($"vowels:{vowels} and consonants:{consonants}");
+        Console.WriteLine("alphabets:" + alphabets + "digits:" + digits + "specialcharacters:" + specialcharacter);
+
 
 
     }
