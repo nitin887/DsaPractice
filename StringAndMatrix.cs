@@ -1,22 +1,7 @@
 /*
 ## String Data Structure Questions (Basic → Advanced)
 
-### Level 1: String Basics
 
-| Question                                           | Concept Used               |
-| -------------------------------------------------- | -------------------------- |
-| Find length of a string without built-in functions | Traversal                  |
-| Count vowels and consonants                        | Character Processing       |
-| Count digits, alphabets, and special characters    | Character Classification   |
-| Convert lowercase to uppercase                     | ASCII Manipulation         |
-| Reverse a string                                   | Two Pointers               |
-| Check whether a string is palindrome               | Two Pointers               |
-| Find frequency of each character                   | Counting                   |
-| Remove spaces from a string                        | Traversal                  |
-| Concatenate two strings                            | String Manipulation        |
-| Compare two strings                                | Lexicographical Comparison |
-
----
 
 ### Level 2: Intermediate String Problems
 
@@ -210,3 +195,36 @@
 These questions cover almost all major concepts asked in DSA interviews on **Strings** and **Matrices**, from beginner-friendly problems to FAANG-level interview questions.
 
 */
+class StringAndMatrix
+{
+    /*
+       ### Level 1: String Basics
+
+| Question                                           | Concept Used               |
+| -------------------------------------------------- | -------------------------- |
+| Find length of a string without built-in functions | Traversal                  |
+| Count vowels and consonants                        | Character Processing       |
+| Count digits, alphabets, and special characters    | Character Classification   |
+| Convert lowercase to uppercase                     | ASCII Manipulation         |
+| Reverse a string                                   | Two Pointers               |
+| Check whether a string is palindrome               | Two Pointers               |
+| Find frequency of each character                   | Counting                   |
+| Remove spaces from a string                        | Traversal                  |
+| Concatenate two strings                            | String Manipulation        |
+| Compare two strings                                | Lexicographical Comparison |
+
+---
+       */
+    static void Main()
+    {
+        string name = "nitin";
+        int length = 0;
+        foreach (char x in name)
+        {
+            length++;
+        }
+        Console.WriteLine("Length of string:" + length);
+
+
+    }
+}
