@@ -202,7 +202,6 @@ class StringAndMatrix
 
 | Question                                           | Concept Used               |
 | -------------------------------------------------- | -------------------------- |
-| Find length of a string without built-in functions | Traversal                  |
 | Count vowels and consonants                        | Character Processing       |
 | Count digits, alphabets, and special characters    | Character Classification   |
 | Convert lowercase to uppercase                     | ASCII Manipulation         |
@@ -218,12 +217,22 @@ class StringAndMatrix
     static void Main()
     {
         string name = "nitin";
-        int length = 0;
-        foreach (char x in name)
+        int vowels = 0;
+        int consonants = 0;
+        for (int i = 0; i < name.Length; i++)
         {
-            length++;
+            if (name[i] == 'a' || name[i] == 'e' || name[i] == 'i' || name[i] == 'o' || name[i] == 'u')
+            {
+                vowels++;
+
+            }
+            else
+            {
+                consonants++;
+            }
+
         }
-        Console.WriteLine("Length of string:" + length);
+        Console.WriteLine($"vowels:{vowels} and consonants:{consonants}");
 
 
     }
