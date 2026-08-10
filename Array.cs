@@ -22,27 +22,11 @@ class Revision
    static void Main()
    {
       int[] arr = [1, 2, 34, 5];
-      int[] arr1 = [1, 2, 34, 5];
-      bool issame = false;
-      int i = 0;
-      int j = 0;
-      while (i < arr.Length && j < arr.Length)
+      for (int i = 0; i < arr.Length; i++)
       {
-         if (arr[i] != arr1[j])
-         {
-            issame = false;
-            break;
-
-         }
-         else
-         {
-            issame = true;
-            i++;
-            j++;
-         }
-
+         Console.WriteLine(arr[i]);
       }
-      Console.WriteLine(issame);
+
    }
 
 }
