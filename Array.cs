@@ -21,24 +21,11 @@ class Revision
    */
    static void Main()
    {
-      int[] number = [1, 2, 3, 4];
-      int[] numbers = new int[number.Length + 1];
-      for (int i = 0; i < numbers.Length; i++)
+      int[] number = [1, 2, 3, 4, 5];
+      int n = number.Length;
+      for (int i = 0; i < n; i++)
       {
-         if (i == numbers.Length - 1)
-         {
-            numbers[i] = 12;
-
-         }
-         else
-         {
-            numbers[i] = number[i];
-         }
-
-      }
-      foreach (int x in numbers)
-      {
-         Console.WriteLine(x);
+         Console.WriteLine(number[i]);
       }
 
    }
