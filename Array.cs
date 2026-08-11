@@ -38,11 +38,10 @@ class Revision
          {
             number[i] = number[i + 1];
          }
+
       }
-      if (isfound)
-      {
-         n--;
-      }
+      n -= 2;
+
       for (int i = 0; i < n; i++)
       {
          Console.WriteLine(number[i]);
