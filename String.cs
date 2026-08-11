@@ -9,7 +9,8 @@ class String
     {
         string name = "nitink";
         char[] name1 = name.ToCharArray();
-        int d = 2;
+        int d = 8;
+        d %= name1.Length;
 
         for (int i = 0; i < d; i++)
         {
