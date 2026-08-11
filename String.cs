@@ -6,23 +6,30 @@ class String
 {
     static void Main()
     {
-        string name = "nitin0";
-        char[] names = name.ToCharArray();
-        int n = names.Length;
-
-        for (int i = 0; i < n - 1; i++)
+        string name = "nitin1";
+        string name1 = "nitin0";
+        bool issame = false;
+        for (int i = 0; i < name.Length; i++)
         {
-            names[i] = name[i + 1];
-
-
+            if (name[i] == name1[i])
+            {
+                issame = true;
+            }
+            else
+            {
+                issame = false;
+                break;
+            }
 
         }
-        for (int i = 0; i < n - 1; i++)
+        if (issame)
         {
-
-            Console.WriteLine(names[i]);
+            Console.WriteLine("string are same");
         }
-
+        else
+        {
+            Console.WriteLine("strings are not same");
+        }
     }
 
 }
