@@ -22,26 +22,28 @@ class Revision
    static void Main()
    {
       int[] number = [1, 2, 3, 5, 6];
-      int number1 = 34;
-      bool isfound = false;
-      for (int i = 0; i < number.Length; i++)
+      int low = 0;
+      int target = 3;
+      int high = number.Length - 1;
+      while (low < high)
       {
-
-         if (number[i] == number1)
+         int mid = low + (high - low) / 2;
+         if (number[mid] == target)
          {
-            Console.WriteLine(i);
-            isfound = true;
-
+            Console.WriteLine(mid);
          }
-
-
-
+         if (number[mid] < target)
+         {
+            low = mid + 1;
+         }
+         else
+         {
+            high = mid - 1;
+         }
       }
-      if (!isfound)
-      {
-         Console.WriteLine("no index is present");
-      }
-
 
    }
+
+
 }
+
