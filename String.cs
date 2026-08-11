@@ -5,15 +5,32 @@ class String
     static void Main()
     {
         string name = "nitin";
-        char x = 't';
-        for (int i = 0; i < name.Length; i++)
+        string x = "tii";
+        bool isfound = false;
+
+        for (int i = 0; i < x.Length; i++)
         {
-            if (name[i] == x)
+            if (name[i] == x[i])
             {
-                Console.WriteLine("present at index:" + i);
+
+                isfound = true;
+
 
             }
+            else
+            {
+                isfound = false;
+            }
 
+
+        }
+        if (!isfound)
+        {
+            Console.WriteLine("do not exist");
+        }
+        else
+        {
+            Console.WriteLine("substring exist");
         }
 
     }
