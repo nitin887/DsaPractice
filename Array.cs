@@ -22,21 +22,22 @@ class Revision
    static void Main()
    {
       int[] number = [1, 2, 3, 4, 5, 0];
-      int index = 2;
-      for (int i = 2; i < number.Length; i++)
+
+      int k = number.Length - 1;
+      for (int i = 0; i < number.Length; i++)
       {
-         (number[i], number[index]) = (number[index], number[i]);
+         if (i < k)
+         {
+            continue;
 
-
+         }
+         number[i] = 12;
 
       }
-
-      number[2] = 12;
-
       for (int i = 0; i < number.Length; i++)
       {
          Console.WriteLine(number[i]);
+
       }
    }
 }
-
