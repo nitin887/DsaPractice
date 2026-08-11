@@ -21,20 +21,20 @@ class Revision
    */
    static void Main()
    {
-      int[] number = [1, 2, 3, 4, 5, 0];
-
-      int k = number.Length - 1;
-      for (int i = 0; i < number.Length; i++)
+      int[] number = [1, 2, 3, 4, 5];
+      int n = number.Length - 1;
+      bool isfound = false;
+      for (int i = 1; i < number.Length; i++)
       {
-         if (i < k)
-         {
-            continue;
-
-         }
-         number[i] = 12;
-
+         number[i - 1] = number[i];
       }
-      for (int i = 0; i < number.Length; i++)
+
+      if (isfound)
+      {
+         n--;
+      }
+
+      for (int i = 0; i < n; i++)
       {
          Console.WriteLine(number[i]);
 
