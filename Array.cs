@@ -22,17 +22,15 @@ class Revision
    static void Main()
    {
       int[] number = [1, 2, 3, 4, 5];
-      int n = number.Length - 1;
-      bool isfound = false;
-      for (int i = number.Length - 2; i < number.Length - 1; i++)
+      int n = number.Length;
+      for (int i = 3; i <= n - 1; i++)
       {
-         number[i + 1] = number[i];
-      }
 
-      if (isfound)
-      {
-         n--;
+         number[i - 1] = number[i];
+
       }
+      n--;
+
 
       for (int i = 0; i < n; i++)
       {
