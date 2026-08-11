@@ -24,9 +24,9 @@ class Revision
       int[] number = [1, 2, 3, 4, 5];
       int n = number.Length - 1;
       bool isfound = false;
-      for (int i = 1; i < number.Length; i++)
+      for (int i = number.Length - 2; i < number.Length - 1; i++)
       {
-         number[i - 1] = number[i];
+         number[i + 1] = number[i];
       }
 
       if (isfound)
