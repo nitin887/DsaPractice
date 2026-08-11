@@ -21,22 +21,27 @@ class Revision
    */
    static void Main()
    {
-      List<int> number = [1, 2, 3, 4, 3];
-      for (int i = 0; i < number.Count; i++)
+      int[] number = [1, 2, 3, 5, 6];
+      int number1 = 34;
+      bool isfound = false;
+      for (int i = 0; i < number.Length; i++)
       {
-         if (number[i] == 3)
+
+         if (number[i] == number1)
          {
-            number.Remove(number[i]);
+            Console.WriteLine(i);
+            isfound = true;
+
          }
 
+
+
       }
-
-
-
-
-      for (int i = 0; i < number.Count; i++)
+      if (!isfound)
       {
-         Console.WriteLine(number[i]);
+         Console.WriteLine("no index is present");
       }
+
+
    }
 }
