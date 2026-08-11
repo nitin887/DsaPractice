@@ -21,28 +21,20 @@ class Revision
    */
    static void Main()
    {
-      int[] number = [1, 2, 3, 4, 5, 3];
-      int n = number.Length;
-      int element = 3;
-      bool isfound = false;
-      for (int i = 0; i < number.Length - 1; i++)
+      List<int> number = [1, 2, 3, 4, 3];
+      for (int i = 0; i < number.Count; i++)
       {
-         if (number[i] == element)
+         if (number[i] == 3)
          {
-            int k = i;
-            isfound = true;
-
-            i = k;
-         }
-         if (isfound)
-         {
-            number[i] = number[i + 1];
+            number.Remove(number[i]);
          }
 
       }
-      n -= 2;
 
-      for (int i = 0; i < n; i++)
+
+
+
+      for (int i = 0; i < number.Count; i++)
       {
          Console.WriteLine(number[i]);
       }
