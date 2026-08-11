@@ -6,8 +6,14 @@ class String
 {
     static void Main()
     {
-        string name = "nitin1";
-        string name1 = name + "heelos";
-        Console.WriteLine(name1);
+        string name = "nitink";
+        for (int i = name.Length - 1; i >= 0; i--)
+        {
+            Console.WriteLine(name[i]);
+
+
+
+
+        }
     }
 }
