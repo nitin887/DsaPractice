@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-
+/*
+check of substring
+*/
 class String
 {
     static void Main()
