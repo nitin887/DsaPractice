@@ -1,16 +1,20 @@
 using System.ComponentModel.DataAnnotations;
 
-class StringAndMatrix
+class String
 {
     static void Main()
     {
         string name = "nitin";
-        int Length = 0;
-        foreach (char x in name)
+        char x = 't';
+        for (int i = 0; i < name.Length; i++)
         {
-            Length++;
+            if (name[i] == x)
+            {
+                Console.WriteLine("present at index:" + i);
+
+            }
+
         }
-        Console.WriteLine(Length);
 
     }
 
