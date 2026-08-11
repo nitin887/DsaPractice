@@ -7,29 +7,7 @@ class String
     static void Main()
     {
         string name = "nitin1";
-        string name1 = "nitin0";
-        bool issame = false;
-        for (int i = 0; i < name.Length; i++)
-        {
-            if (name[i] == name1[i])
-            {
-                issame = true;
-            }
-            else
-            {
-                issame = false;
-                break;
-            }
-
-        }
-        if (issame)
-        {
-            Console.WriteLine("string are same");
-        }
-        else
-        {
-            Console.WriteLine("strings are not same");
-        }
+        string name1 = name + "heelos";
+        Console.WriteLine(name1);
     }
-
 }
