@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Security.AccessControl;
 using System.Security.Cryptography.X509Certificates;
 
 class String
@@ -7,17 +8,19 @@ class String
     {
         string name = "nitin0";
         char[] names = name.ToCharArray();
+        int n = names.Length;
 
-        for (int i = 1; i <= names.Length - 1; i++)
+        for (int i = 0; i < n - 1; i++)
         {
-            names[i] = name[i - 1];
+            names[i] = name[i + 1];
+
 
 
         }
-        names[0] = 'x';
-        foreach (char x in names)
+        for (int i = 0; i < n - 1; i++)
         {
-            Console.WriteLine(x);
+
+            Console.WriteLine(names[i]);
         }
 
     }
