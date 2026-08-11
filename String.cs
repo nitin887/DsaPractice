@@ -1,38 +1,23 @@
 using System.ComponentModel.DataAnnotations;
-/*
-check of substring
-*/
+using System.Security.Cryptography.X509Certificates;
+
 class String
 {
     static void Main()
     {
-        string name = "nitin";
-        string x = "tii";
-        bool isfound = false;
+        string name = "nitin0";
+        char[] names = name.ToCharArray();
 
-        for (int i = 0; i < x.Length; i++)
+        for (int i = 1; i <= names.Length - 1; i++)
         {
-            if (name[i] == x[i])
-            {
-
-                isfound = true;
-
-
-            }
-            else
-            {
-                isfound = false;
-            }
+            names[i] = name[i - 1];
 
 
         }
-        if (!isfound)
+        names[0] = 'x';
+        foreach (char x in names)
         {
-            Console.WriteLine("do not exist");
-        }
-        else
-        {
-            Console.WriteLine("substring exist");
+            Console.WriteLine(x);
         }
 
     }
