@@ -1,34 +1,51 @@
 class Matrix
 {
-    static void Main()
+    // Sorts each column of the matrix in ascending order
+    static int[,] SortColumns(int[,] matrix)
     {
-        int[,] matrix = { { 2, 3, 1 }, { 7, 5, 6 }, { 11, 10, 9 } };
         int rows = matrix.GetLength(0);
         int cols = matrix.GetLength(1);
 
-        // Sort each column independently (bubble sort per column)
-        for (int j = 0; j < cols; j++)
+        for (int col = 0; col < cols; col++)
         {
+            // Bubble sort the current column
             for (int i = 0; i < rows - 1; i++)
             {
-                for (int m = 0; m < rows - i - 1; m++)
+                for (int j = 0; j < rows - i - 1; j++)
                 {
-                    if (matrix[m, j] > matrix[m + 1, j])
+                    if (matrix[j, col] > matrix[j + 1, col])
                     {
-                        (matrix[m, j], matrix[m + 1, j]) = (matrix[m + 1, j], matrix[m, j]);
+                        (matrix[j, col], matrix[j + 1, col]) = (matrix[j + 1, col], matrix[j, col]);
                     }
                 }
             }
         }
+        return matrix;
+    }
 
-        // Print the sorted matrix
-        for (int i = 0; i < rows; i++)
+    // Prints the matrix in a readable format
+    static void PrintMatrix(int[,] matrix)
+    {
+        for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            for (int j = 0; j < cols; j++)
+            for (int j = 0; j < matrix.GetLength(1); j++)
             {
-                Console.Write(matrix[i, j] + " ");
+                Console.Write(matrix[i, j] + "\t");
             }
             Console.WriteLine();
         }
+    }
+
+    static void Main()
+    {
+        int[,] matrix = { { 2, 7, 11 }, { 3, 5, 6 }, { 1, 10, 9 } };
+
+        Console.WriteLine("Original Matrix:");
+        PrintMatrix(matrix);
+
+        int[,] sorted = SortColumns(matrix);
+
+        Console.WriteLine("\nMatrix after sorting each column:");
+        PrintMatrix(sorted);
     }
 }
