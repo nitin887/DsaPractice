@@ -2,24 +2,33 @@ class Matrix
 {
     static void Main()
     {
-        int[,] matrix = { { 1, 2, 3 }, { 2, 3, 4 }, { 4, 5, 6 } };
-        int x = 2;
+        int[,] matrix = { { 2, 3, 1 }, { 7, 5, 6 }, { 11, 10, 9 } };
+        int rows = matrix.GetLength(0);
+        int cols = matrix.GetLength(1);
 
-        for (int i = 0; i < matrix.GetLength(0); i++)
+        // Sort each column independently (bubble sort per column)
+        for (int j = 0; j < cols; j++)
         {
-            for (int j = 0; j < matrix.GetLength(1); j++)
+            for (int i = 0; i < rows - 1; i++)
             {
-                if (matrix[i, j] == x)
+                for (int m = 0; m < rows - i - 1; m++)
                 {
-                    Console.WriteLine($"element exist at {i} {j} ");
-
+                    if (matrix[m, j] > matrix[m + 1, j])
+                    {
+                        (matrix[m, j], matrix[m + 1, j]) = (matrix[m + 1, j], matrix[m, j]);
+                    }
                 }
             }
-
         }
 
-
-
-
+        // Print the sorted matrix
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                Console.Write(matrix[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
     }
 }
