@@ -32,19 +32,34 @@ class String
 
     static void Main()
     {
-        string name = "nitink";
-        int d = 2;
-        Console.WriteLine(Rotate(name, d));
+        string name = "nitin";
+        int i = 0;
+        int j = name.Length - 1;
+        bool issame = false;
+        while (i < j)
+        {
+            if (name[i] != name[j])
+            {
+                issame = false;
+                break;
+            }
+            else
+            {
+                issame = true;
+            }
+            i++;
+            j--;
 
 
-
-
-
-
-
-
-
-
+        }
+        if (issame)
+        {
+            Console.WriteLine("is a palindrome");
+        }
+        else
+        {
+            Console.WriteLine("not a palindrome");
+        }
 
     }
 }
