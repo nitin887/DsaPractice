@@ -1,31 +1,44 @@
-using System.Security.AccessControl;
-
 class Matrix
 {
 
     static void Main()
     {
-        int[,] number ={{3,1,2},
-                        {6,4,5},
-                        {10,8,9}};
-        for (int i = 0; i < number.GetLength(0); i++)
+        int[,] number ={{3,6,10},
+                        {1,4,5},
+                        {2,8,9}};
+
+        Console.WriteLine("Original Matrix:");
+        PrintMatrix(number);
+
+        // Column-wise sorting (ascending order)
+        for (int col = 0; col < number.GetLength(1); col++)
         {
-            for (int j = 1; j < number.GetLength(1); j++)
+            // Bubble sort the current column
+            for (int pass = 0; pass < number.GetLength(0) - 1; pass++)
             {
-                if (number[i, j] < number[i, j - 1])
+                for (int row = 0; row < number.GetLength(0) - 1 - pass; row++)
                 {
-                    (number[i, j], number[i, j - 1]) = (number[i, j - 1], number[i, j]);
+                    if (number[row, col] > number[row + 1, col])
+                    {
+                        (number[row, col], number[row + 1, col]) = (number[row + 1, col], number[row, col]);
+                    }
                 }
-
-
             }
-
         }
-        foreach (var data in number)
+
+        Console.WriteLine("\nMatrix after column-wise sorting:");
+        PrintMatrix(number);
+    }
+
+    static void PrintMatrix(int[,] matrix)
+    {
+        for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            Console.Write(data);
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                Console.Write(matrix[i, j] + " ");
+            }
+            Console.WriteLine();
         }
-
-
     }
 }
