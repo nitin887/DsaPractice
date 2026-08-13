@@ -1,32 +1,21 @@
 class Revision
 {
     /*
-    Arrays
+    Arrays:multiplying with adjacent
     */
     static void Main()
     {
-        int[] numbers = [1, 2, 3];
-        bool issorted = false;
-        for (int i = 0; i < numbers.Length - 1; i++)
+        int[] numbers = [6, 2, 3];
+        for (int i = 1; i < numbers.Length; i++)
         {
-            if (numbers[i] < numbers[i + 1])
-            {
-                issorted = true;
-            }
-            else
-            {
-                issorted = false;
-                break;
-            }
+            numbers[i] = numbers[i] * numbers[i - 1];
 
         }
-        if (issorted)
+        foreach (var data in numbers)
         {
-            Console.WriteLine("is sorted");
+            Console.WriteLine(data);
         }
-        else
-        {
-            Console.WriteLine("is not sorted");
-        }
+
+
     }
 }
