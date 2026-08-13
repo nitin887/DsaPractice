@@ -1,19 +1,14 @@
 class Revision
 {
     /*
-    Arrays:multiplying with adjacent
+    Arrays:reverse the array
     */
     static void Main()
     {
         int[] numbers = [6, 2, 3];
-        for (int i = 1; i < numbers.Length; i++)
+        for (int i = numbers.Length - 1; i >= 0; i--)
         {
-            numbers[i] = numbers[i] * numbers[i - 1];
-
-        }
-        foreach (var data in numbers)
-        {
-            Console.WriteLine(data);
+            Console.WriteLine(numbers[i]);
         }
 
 
