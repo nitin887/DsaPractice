@@ -279,7 +279,6 @@ CSharp Love I
 ## Easy Level
 
 
-### 5. Count Even and Odd Numbers
 
 ### 6. Find Maximum and Minimum in One Traversal
 
@@ -297,7 +296,8 @@ CSharp Love I
 class Revision
 {
     /*
-   4. Calculate Average of Array
+### 5. Count Even and Odd Numbers
+   
 
 
 
@@ -305,16 +305,20 @@ class Revision
     static void Main()
     {
         int[] number = [1, 2, 0, 35];
-        int sum = 0;
-        double avg = 0;
+        int even = 0;
+        int odd = 0;
         for (int i = 0; i < number.Length; i++)
         {
-            sum += number[i];
-            avg = (double)sum / 4;
-
-
+            if (number[i] % 2 == 0)
+            {
+                even++;
+            }
+            else
+            {
+                odd++;
+            }
         }
-        Console.WriteLine(avg);
+        Console.WriteLine("even:" + even + "odd:" + odd);
 
 
 
