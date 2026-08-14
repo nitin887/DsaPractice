@@ -278,7 +278,6 @@ CSharp Love I
 /*
 ## Easy Level
 
-### 4. Calculate Average of Array
 
 ### 5. Count Even and Odd Numbers
 
@@ -298,7 +297,7 @@ CSharp Love I
 class Revision
 {
     /*
-  Calculate Sum of Array
+   4. Calculate Average of Array
 
 
 
@@ -306,16 +305,17 @@ class Revision
     static void Main()
     {
         int[] number = [1, 2, 0, 35];
-        int Sum = 0;
-        int i = 0;
-        int j = number.Length;
-        while (i < j)
+        int sum = 0;
+        double avg = 0;
+        for (int i = 0; i < number.Length; i++)
         {
-            Sum += number[i];
-            i++;
+            sum += number[i];
+            avg = (double)sum / 4;
+
 
         }
-        Console.WriteLine("smallest:" + Sum);
+        Console.WriteLine(avg);
+
 
 
 
