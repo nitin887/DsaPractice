@@ -278,9 +278,6 @@ CSharp Love I
 /*
 ## Easy Level
 
-
-### 3. Calculate Sum of Array
-
 ### 4. Calculate Average of Array
 
 ### 5. Count Even and Odd Numbers
@@ -301,27 +298,24 @@ CSharp Love I
 class Revision
 {
     /*
- Find Smallest Element
+  Calculate Sum of Array
+
 
 
     */
     static void Main()
     {
         int[] number = [1, 2, 0, 35];
-        int Smallest = number[0];
+        int Sum = 0;
         int i = 0;
         int j = number.Length;
-        while (i < j - 1)
+        while (i < j)
         {
-            if (number[i] < Smallest)
-            {
-                Smallest = number[i];
-
-            }
+            Sum += number[i];
             i++;
 
         }
-        Console.WriteLine("smallest:" + Smallest);
+        Console.WriteLine("smallest:" + Sum);
 
 
 
