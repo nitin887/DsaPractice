@@ -278,7 +278,6 @@ CSharp Love I
 /*
 ## Easy Level
 
-### 2. Find Smallest Element
 
 ### 3. Calculate Sum of Array
 
@@ -302,26 +301,29 @@ CSharp Love I
 class Revision
 {
     /*
-    Find Largest Element
+ Find Smallest Element
+
 
     */
     static void Main()
     {
-        int[] number = [1, 2, 34, 35];
-        int Largest = 0;
-        for (int i = 0; i < number.Length - 1; i++)
+        int[] number = [1, 2, 0, 35];
+        int Smallest = number[0];
+        int i = 0;
+        int j = number.Length;
+        while (i < j - 1)
         {
-            if (number[i] > number[i + 1])
+            if (number[i] < Smallest)
             {
-                Largest = number[i];
+                Smallest = number[i];
+
             }
-            else
-            {
-                Largest = number[i + 1];
-            }
+            i++;
 
         }
-        Console.WriteLine("no is largest:" + Largest);
+        Console.WriteLine("smallest:" + Smallest);
+
+
 
     }
 
