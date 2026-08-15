@@ -274,22 +274,12 @@ CSharp Love I
 99. Edit Distance
 
 100. Word Break
-
-/*
-## Easy Level
-
-
-
-
-### 10. Print Array in Reverse Order
-
----
-
 */
+
 class Revision
 {
     /*
-### 9. Reverse an Array
+### 9. Reverse an Array without printing array in reverse order
 
 
 
@@ -297,10 +287,21 @@ class Revision
     static void Main()
     {
         int[] number = [0, 1, 2, 35];
-        for (int i = number.Length - 1; i >= 0; i--)
+        int start = 0;
+        int end = number.Length - 1;
+        while (start < end)
         {
-            Console.WriteLine(number[i]);
+            if (number[start] < number[end])
+            {
+                (number[start], number[end]) = (number[end], number[start]);
+                end--;
+            }
+            start++;
 
+        }
+        foreach (int x in number)
+        {
+            Console.WriteLine(x);
         }
 
 
@@ -309,5 +310,4 @@ class Revision
 
 
     }
-
 }
