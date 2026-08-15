@@ -278,7 +278,6 @@ CSharp Love I
 /*
 ## Easy Level
 
-### 7. Search an Element (Linear Search)
 
 ### 8. Check if Array is Sorted
 
@@ -292,27 +291,34 @@ CSharp Love I
 class Revision
 {
     /*
-### 6. Find Maximum and Minimum in One Traversal
+### 7. Search an Element (Linear Search)
+
 */
     static void Main()
     {
         int[] number = [1, 2, 0, 35];
-        int max = number[0];
-        int min = number[0];
-        for (int i = 1; i < number.Length; i++)
+        int Search = 0;
+        bool isfound = false;
+        for (int i = 0; i < number.Length; i++)
         {
-            if (number[i] < min)
+            if (number[i] == Search)
             {
-                min = number[i];
-
+                isfound = true;
+                Console.WriteLine("number is at:" + i);
+                break;
             }
-            else if (number[i] > min && number[i] > max)
+            else
             {
-                max = number[i];
+                isfound = false;
+
             }
 
         }
-        Console.WriteLine("min:" + min + "max:" + max);
+        if (!isfound)
+        {
+            Console.WriteLine("no do not exist");
+        }
+
 
 
 
