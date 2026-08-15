@@ -259,7 +259,6 @@ CSharp Love I
 
 
 
-### 13. Remove Duplicates from Sorted Array
 
 ### 14. Left Rotate Array by One Place
 
@@ -285,33 +284,41 @@ using System.Runtime.Serialization;
 class Revision
 {
     /*
-### 12. Find Second Smallest Element
+### 13. Remove Duplicates from Sorted Array
+
 
 
     */
     static void Main()
     {
 
-        int[] number = [6, 1, 2, 35];
-        int Smallest = number[0];
-        int secondSmallest = number[0];
-        for (int i = 1; i < number.Length; i++)
+        int[] number = [1, 2, 3, 3, 4];
+        int position = 0;
+        for (int i = 0; i < number.Length - 1; i++)
         {
-            if (number[i] < Smallest)
+            if (number[i] == number[i + 1])
             {
-
-                Smallest = number[i];
-
-            }
-            else if (number[i] < secondSmallest && number[i] > Smallest)
-            {
-                secondSmallest = number[i];
-
-
+                position = i;
             }
 
         }
-        Console.WriteLine("second smallest:" + secondSmallest);
+        for (int i = position + 1; i < number.Length - 1; i++)
+        {
+            number[i] = number[i + 1];
+
+
+
+
+
+        }
+        for (int i = 0; i <= number.Length - 2; i++)
+        {
+            Console.WriteLine(number[i]);
+
+        }
+
+
+
 
 
 
