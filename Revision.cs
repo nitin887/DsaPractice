@@ -3,23 +3,6 @@
 
 # Phase 1: Array Fundamentals (Must Solve First)
 
-
-## Easy-Medium
-
-### 11. Find Second Largest Element
-
-### 12. Find Second Smallest Element
-
-### 13. Remove Duplicates from Sorted Array
-
-### 14. Left Rotate Array by One Place
-
-### 15. Right Rotate Array by One Place
-
-### 16. Left Rotate Array by K Places
-
-### 17. Move All Zeros to End
-
 Example:
 
 ```
@@ -30,11 +13,7 @@ Output:
 [1,2,3,4,0,0]
 ```
 
-### 18. Union of Two Sorted Arrays
 
-### 19. Intersection of Two Arrays
-
-### 20. Missing Number in Array
 
 ---
 
@@ -275,34 +254,61 @@ CSharp Love I
 
 100. Word Break
 */
+/*
+## Easy-Medium
 
-class Revision
-{
-    /*
-### 9. Reverse an Array without printing array in reverse order
+
+### 12. Find Second Smallest Element
+
+### 13. Remove Duplicates from Sorted Array
+
+### 14. Left Rotate Array by One Place
+
+### 15. Right Rotate Array by One Place
+
+### 16. Left Rotate Array by K Places
+
+### 17. Move All Zeros to End
+### 18. Union of Two Sorted Arrays
+
+### 19. Intersection of Two Arrays
+
+### 20. Missing Number in Array
+
 
 
 
 */
+
+
+using System.Runtime.Serialization;
+
+class Revision
+{
+    /*
+### 11. Find Second Largest Element
+
+    */
     static void Main()
     {
+
         int[] number = [0, 1, 2, 35];
-        int start = 0;
-        int end = number.Length - 1;
-        while (start < end)
+        int largest = number[0];
+        int secondLargest = number[0];
+        for (int i = 1; i < number.Length; i++)
         {
-            if (number[start] < number[end])
+            if (number[i] > largest)
             {
-                (number[start], number[end]) = (number[end], number[start]);
-                end--;
+                int temp = largest;
+                largest = number[i];
+                secondLargest = temp;
+
             }
-            start++;
+
 
         }
-        foreach (int x in number)
-        {
-            Console.WriteLine(x);
-        }
+        Console.WriteLine("largest:" + largest + "second largest:" + secondLargest);
+
 
 
 
