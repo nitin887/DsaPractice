@@ -279,7 +279,6 @@ CSharp Love I
 ## Easy Level
 
 
-### 8. Check if Array is Sorted
 
 ### 9. Reverse an Array
 
@@ -291,33 +290,37 @@ CSharp Love I
 class Revision
 {
     /*
-### 7. Search an Element (Linear Search)
+### 8. Check if Array is Sorted
+
 
 */
     static void Main()
     {
-        int[] number = [1, 2, 0, 35];
-        int Search = 0;
-        bool isfound = false;
-        for (int i = 0; i < number.Length; i++)
+        int[] number = [0, 1, 2, 35];
+        bool isSorted = false;
+        for (int i = 0; i < number.Length - 1; i++)
         {
-            if (number[i] == Search)
+            if (number[i] < number[i + 1])
             {
-                isfound = true;
-                Console.WriteLine("number is at:" + i);
-                break;
+                isSorted = true;
             }
             else
             {
-                isfound = false;
-
+                isSorted = false;
+                break;
             }
 
         }
-        if (!isfound)
+        if (isSorted)
         {
-            Console.WriteLine("no do not exist");
+            Console.WriteLine("array is  sorted");
+
         }
+        else
+        {
+            Console.WriteLine("array is not sorted");
+        }
+
 
 
 
