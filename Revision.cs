@@ -258,7 +258,6 @@ CSharp Love I
 ## Easy-Medium
 
 
-### 12. Find Second Smallest Element
 
 ### 13. Remove Duplicates from Sorted Array
 
@@ -286,29 +285,33 @@ using System.Runtime.Serialization;
 class Revision
 {
     /*
-### 11. Find Second Largest Element
+### 12. Find Second Smallest Element
+
 
     */
     static void Main()
     {
 
-        int[] number = [0, 1, 2, 35];
-        int largest = number[0];
-        int secondLargest = number[0];
+        int[] number = [6, 1, 2, 35];
+        int Smallest = number[0];
+        int secondSmallest = number[0];
         for (int i = 1; i < number.Length; i++)
         {
-            if (number[i] > largest)
+            if (number[i] < Smallest)
             {
-                int temp = largest;
-                largest = number[i];
-                secondLargest = temp;
+
+                Smallest = number[i];
+
+            }
+            else if (number[i] < secondSmallest && number[i] > Smallest)
+            {
+                secondSmallest = number[i];
+
 
             }
 
-
         }
-        Console.WriteLine("largest:" + largest + "second largest:" + secondLargest);
-
+        Console.WriteLine("second smallest:" + secondSmallest);
 
 
 
