@@ -278,10 +278,6 @@ CSharp Love I
 /*
 ## Easy Level
 
-
-
-### 6. Find Maximum and Minimum in One Traversal
-
 ### 7. Search an Element (Linear Search)
 
 ### 8. Check if Array is Sorted
@@ -296,29 +292,27 @@ CSharp Love I
 class Revision
 {
     /*
-### 5. Count Even and Odd Numbers
-   
-
-
-
-    */
+### 6. Find Maximum and Minimum in One Traversal
+*/
     static void Main()
     {
         int[] number = [1, 2, 0, 35];
-        int even = 0;
-        int odd = 0;
-        for (int i = 0; i < number.Length; i++)
+        int max = number[0];
+        int min = number[0];
+        for (int i = 1; i < number.Length; i++)
         {
-            if (number[i] % 2 == 0)
+            if (number[i] < min)
             {
-                even++;
+                min = number[i];
+
             }
-            else
+            else if (number[i] > min && number[i] > max)
             {
-                odd++;
+                max = number[i];
             }
+
         }
-        Console.WriteLine("even:" + even + "odd:" + odd);
+        Console.WriteLine("min:" + min + "max:" + max);
 
 
 
