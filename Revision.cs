@@ -280,7 +280,6 @@ CSharp Love I
 
 
 
-### 9. Reverse an Array
 
 ### 10. Print Array in Reverse Order
 
@@ -290,35 +289,18 @@ CSharp Love I
 class Revision
 {
     /*
-### 8. Check if Array is Sorted
+### 9. Reverse an Array
+
 
 
 */
     static void Main()
     {
         int[] number = [0, 1, 2, 35];
-        bool isSorted = false;
-        for (int i = 0; i < number.Length - 1; i++)
+        for (int i = number.Length - 1; i >= 0; i--)
         {
-            if (number[i] < number[i + 1])
-            {
-                isSorted = true;
-            }
-            else
-            {
-                isSorted = false;
-                break;
-            }
+            Console.WriteLine(number[i]);
 
-        }
-        if (isSorted)
-        {
-            Console.WriteLine("array is  sorted");
-
-        }
-        else
-        {
-            Console.WriteLine("array is not sorted");
         }
 
 
