@@ -260,7 +260,6 @@ CSharp Love I
 
 
 
-### 14. Left Rotate Array by One Place
 
 ### 15. Right Rotate Array by One Place
 
@@ -284,7 +283,8 @@ using System.Runtime.Serialization;
 class Revision
 {
     /*
-### 13. Remove Duplicates from Sorted Array
+### 14. Left Rotate Array by One Place
+
 
 
 
@@ -292,30 +292,23 @@ class Revision
     static void Main()
     {
 
-        int[] number = [1, 2, 3, 3, 4];
-        int position = 0;
+        int[] number = [6, 2, 5, 9, 8];
+        int position = 1;
+        int FirstIndex = number[position - 1];
         for (int i = 0; i < number.Length - 1; i++)
-        {
-            if (number[i] == number[i + 1])
-            {
-                position = i;
-            }
-
-        }
-        for (int i = position + 1; i < number.Length - 1; i++)
         {
             number[i] = number[i + 1];
 
 
 
-
-
         }
-        for (int i = 0; i <= number.Length - 2; i++)
+        number[number.Length - 1] = FirstIndex;
+        foreach (int x in number)
         {
-            Console.WriteLine(number[i]);
-
+            Console.WriteLine(x);
         }
+
+
 
 
 
