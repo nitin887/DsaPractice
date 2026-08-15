@@ -261,7 +261,6 @@ CSharp Love I
 
 
 
-### 15. Right Rotate Array by One Place
 
 ### 16. Left Rotate Array by K Places
 
@@ -283,26 +282,21 @@ using System.Runtime.Serialization;
 class Revision
 {
     /*
-### 14. Left Rotate Array by One Place
-
-
-
-
-    */
+### 15. Right Rotate Array by One Place
+  */
     static void Main()
     {
 
         int[] number = [6, 2, 5, 9, 8];
         int position = 1;
-        int FirstIndex = number[position - 1];
-        for (int i = 0; i < number.Length - 1; i++)
+        int lastIndex = number[number.Length - position];
+        for (int i = number.Length - 1; i > 0; i--)
         {
-            number[i] = number[i + 1];
-
-
-
+            number[i] = number[i - 1];
         }
-        number[number.Length - 1] = FirstIndex;
+        number[0] = lastIndex;
+
+
         foreach (int x in number)
         {
             Console.WriteLine(x);
