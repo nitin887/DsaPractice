@@ -200,7 +200,6 @@ CSharp Love I
 */
 /*
 
-### 22. Find Element Appearing Once
 
 
 ### 23. Find Majority Element
@@ -227,10 +226,7 @@ CSharp Love I
 class Revision
 {
     /*
-### 21. Find Frequency of Each Element
-
-
-
+### 22. Find Element Appearing Once
 
   */
     static void Main()
@@ -253,7 +249,10 @@ class Revision
         }
         foreach (var number1 in numbers)
         {
-            Console.WriteLine($"{number1.Key}-{number1.Value}");
+            if (number1.Value == 1)
+            {
+                Console.WriteLine(number1.Key);
+            }
         }
 
 
