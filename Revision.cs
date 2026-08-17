@@ -1,60 +1,4 @@
 /*
----
-
-# Phase 1: Array Fundamentals (Must Solve First)
-
-Example:
-
-```
-Input:
-[1,0,2,3,0,4]
-
-Output:
-[1,2,3,4,0,0]
-```
-
-
-
----
-
-# Phase 2: Array Interview Patterns
-
-These are extremely important.
-
-### 21. Find Frequency of Each Element
-
-### 22. Find Element Appearing Once
-
-Example:
-
-```
-[1,1,2,2,3]
-```
-
-Output:
-
-```
-3
-```
-
-### 23. Find Majority Element
-
-### 24. Kadane's Algorithm (Maximum Subarray Sum)
-
-### 25. Stock Buy and Sell
-
-### 26. Rearrange Positive and Negative Numbers
-
-### 27. Leaders in an Array
-
-### 28. Longest Consecutive Sequence
-
-### 29. Find Duplicate Number
-
-### 30. Merge Two Sorted Arrays
-
----
-
 # Phase 3: String Fundamentals
 
 ## Easy
@@ -255,20 +199,36 @@ CSharp Love I
 100. Word Break
 */
 /*
-## Easy-Medium
+
+### 22. Find Element Appearing Once
 
 
+### 23. Find Majority Element
 
+### 24. Kadane's Algorithm (Maximum Subarray Sum)
+
+### 25. Stock Buy and Sell
+
+### 26. Rearrange Positive and Negative Numbers
+
+### 27. Leaders in an Array
+
+### 28. Longest Consecutive Sequence
+
+### 29. Find Duplicate Number
+
+### 30. Merge Two Sorted Arrays
+
+---
 */
 
 
-using System.ComponentModel;
-using System.Runtime.Serialization;
 
 class Revision
 {
     /*
-### 20. Missing Number in Array
+### 21. Find Frequency of Each Element
+
 
 
 
@@ -276,17 +236,24 @@ class Revision
     static void Main()
     {
 
-        int[] number = [1, 2, 3, 5];
-        for (int i = 0; i < number.Length - 1; i++)
+        int[] number = [1, 2, 3, 3, 1, 6, 5];
+        Dictionary<int, int> numbers = new Dictionary<int, int>();
+        int k = 1;
+        for (int i = 0; i < number.Length; i++)
         {
-            if (number[i + 1] - number[i] != 1)
+            if (!numbers.ContainsKey(number[i]))
             {
-                Console.WriteLine("missing number is:" + (number[i] + 1));
-
+                numbers.Add(number[i], k);
+            }
+            else
+            {
+                numbers[number[i]] += k;
             }
 
-
-
+        }
+        foreach (var number1 in numbers)
+        {
+            Console.WriteLine($"{number1.Key}-{number1.Value}");
         }
 
 
