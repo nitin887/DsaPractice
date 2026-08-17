@@ -279,23 +279,12 @@ class Revision
 
         int[] number = [1, 2, 3];
         int[] number1 = [3, 4, 5];
-        List<int> number2 = number.Union(number1).ToList();
-        //  List<int> number3 = number.Intersect(number1).ToList();
-
-
-
-
-
-        for (int i = 0; i < number2.Count; i++)
+        List<int> number3 = number.Intersect(number1).ToList();
+        for (int i = 0; i < number3.Count; i++)
         {
-            Console.WriteLine(number2[i]);
+            Console.WriteLine(number3[i]);
 
         }
-        // for (int i = 0; i < number3.Count; i++)
-        // {
-        //    Console.WriteLine(number3[i]);
-
-        // }
 
 
 
