@@ -256,16 +256,11 @@ CSharp Love I
 */
 /*
 ## Easy-Medium
-### 17. Move All Zeros to End
 ### 18. Union of Two Sorted Arrays
 
 ### 19. Intersection of Two Arrays
 
 ### 20. Missing Number in Array
-
-
-
-
 */
 
 
@@ -274,48 +269,32 @@ using System.Runtime.Serialization;
 class Revision
 {
     /*
-### 16. Left Rotate Array by K Places
+### 17. Move All Zeros to End
+
 
   */
-    static void Reverse(int[] temp, int start, int end)
-    {
-        while (start < end)
-        {
-            (temp[start], temp[end]) = (temp[end], temp[start]);
-            start++;
-            end--;
-
-        }
-
-
-    }
-    static void Rotate(int[] number, int k)
-    {
-        int n = number.Length;
-        k %= n;
-        Reverse(number, 0, k - 1);
-        Reverse(number, k, n - 1);
-        Reverse(number, 0, n - 1);
-
-
-
-
-    }
     static void Main()
     {
 
-        int[] number = [6, 2, 5, 9, 8];
-        int k = 3;
-        Rotate(number, k);
+        int[] number = [0, 2, 0, 0, 0, 4, 0, 5];
+        int low = 0;
+        int high = 0;
+        while (low <= number.Length - 1)
+        {
+            if (number[low] != 0)
+            {
+                (number[low], number[high]) = (number[high], number[low]);
+                high++;
+            }
+            low++;
+
+
+        }
+
         foreach (int x in number)
         {
             Console.WriteLine(x);
         }
-
-
-
-
-
 
     }
 }
