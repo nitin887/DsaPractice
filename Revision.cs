@@ -256,7 +256,6 @@ CSharp Love I
 */
 /*
 ## Easy-Medium
-### 18. Union of Two Sorted Arrays
 
 ### 19. Intersection of Two Arrays
 
@@ -264,37 +263,44 @@ CSharp Love I
 */
 
 
+using System.ComponentModel;
 using System.Runtime.Serialization;
 
 class Revision
 {
     /*
-### 17. Move All Zeros to End
+### 18. Union of Two Sorted Arrays
+
 
 
   */
     static void Main()
     {
 
-        int[] number = [0, 2, 0, 0, 0, 4, 0, 5];
-        int low = 0;
-        int high = 0;
-        while (low <= number.Length - 1)
-        {
-            if (number[low] != 0)
-            {
-                (number[low], number[high]) = (number[high], number[low]);
-                high++;
-            }
-            low++;
+        int[] number = [1, 2, 3];
+        int[] number1 = [3, 4, 5];
+        List<int> number2 = number.Union(number1).ToList();
+        //  List<int> number3 = number.Intersect(number1).ToList();
 
+
+
+
+
+        for (int i = 0; i < number2.Count; i++)
+        {
+            Console.WriteLine(number2[i]);
 
         }
+        // for (int i = 0; i < number3.Count; i++)
+        // {
+        //    Console.WriteLine(number3[i]);
 
-        foreach (int x in number)
-        {
-            Console.WriteLine(x);
-        }
+        // }
+
+
+
+
+
 
     }
 }
