@@ -257,9 +257,8 @@ CSharp Love I
 /*
 ## Easy-Medium
 
-### 19. Intersection of Two Arrays
 
-### 20. Missing Number in Array
+
 */
 
 
@@ -269,7 +268,7 @@ using System.Runtime.Serialization;
 class Revision
 {
     /*
-### 18. Union of Two Sorted Arrays
+### 20. Missing Number in Array
 
 
 
@@ -277,14 +276,19 @@ class Revision
     static void Main()
     {
 
-        int[] number = [1, 2, 3];
-        int[] number1 = [3, 4, 5];
-        List<int> number3 = number.Intersect(number1).ToList();
-        for (int i = 0; i < number3.Count; i++)
+        int[] number = [1, 2, 3, 5];
+        for (int i = 0; i < number.Length - 1; i++)
         {
-            Console.WriteLine(number3[i]);
+            if (number[i + 1] - number[i] != 1)
+            {
+                Console.WriteLine("missing number is:" + (number[i] + 1));
+
+            }
+
+
 
         }
+
 
 
 
