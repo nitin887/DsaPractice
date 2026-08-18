@@ -199,11 +199,6 @@ CSharp Love I
 100. Word Break
 */
 /*
-
-
-
-### 23. Find Majority Element
-
 ### 24. Kadane's Algorithm (Maximum Subarray Sum)
 
 ### 25. Stock Buy and Sell
@@ -220,39 +215,46 @@ CSharp Love I
 
 ---
 */
-
-
+using System.Globalization;
 
 class Revision
 {
     /*
-### 22. Find Element Appearing Once
-
+   ### 23. Find Majority Element
   */
     static void Main()
     {
 
-        int[] number = [1, 2, 3, 3, 1, 6, 5];
-        Dictionary<int, int> numbers = new Dictionary<int, int>();
-        int k = 1;
-        for (int i = 0; i < number.Length; i++)
+        int[] number = [1, 2, 3, 2, 2, 2];
+        int candidate = -1;
+        int count = 0;
+        foreach (int nums in number)
         {
-            if (!numbers.ContainsKey(number[i]))
+            if (count == 0)
             {
-                numbers.Add(number[i], k);
+                candidate = nums;
+                count++;
             }
             else
             {
-                numbers[number[i]] += k;
+                count--;
             }
-
         }
-        foreach (var number1 in numbers)
+        count = 0;
+        foreach (int nums1 in number)
         {
-            if (number1.Value == 1)
+            if (nums1 == candidate)
             {
-                Console.WriteLine(number1.Key);
+                count++;
             }
+        }
+        if (count > number.Length / 2)
+        {
+            Console.WriteLine("candidate is:" + candidate);
+        }
+        else
+        {
+            Console.WriteLine("no candidate");
         }
 
 
