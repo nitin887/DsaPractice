@@ -199,7 +199,6 @@ CSharp Love I
 100. Word Break
 */
 /*
-### 24. Kadane's Algorithm (Maximum Subarray Sum)
 
 ### 25. Stock Buy and Sell
 
@@ -220,48 +219,22 @@ using System.Globalization;
 class Revision
 {
     /*
-   ### 23. Find Majority Element
+  ### 24. Kadane's Algorithm (Maximum Subarray Sum)
+
   */
     static void Main()
     {
+        int[] number = [1, 2, 3, 2, 2, 6];
+        int currentSum = number[0];
+        int maxSum = number[0];
 
-        int[] number = [1, 2, 3, 2, 2, 2];
-        int candidate = -1;
-        int count = 0;
-        foreach (int nums in number)
+        for (int i = 1; i < number.Length; i++)
         {
-            if (count == 0)
-            {
-                candidate = nums;
-                count++;
-            }
-            else
-            {
-                count--;
-            }
-        }
-        count = 0;
-        foreach (int nums1 in number)
-        {
-            if (nums1 == candidate)
-            {
-                count++;
-            }
-        }
-        if (count > number.Length / 2)
-        {
-            Console.WriteLine("candidate is:" + candidate);
-        }
-        else
-        {
-            Console.WriteLine("no candidate");
+            // Either start a new subarray at number[i] or extend the current subarray
+            currentSum = Math.Max(number[i], currentSum + number[i]);
+            maxSum = Math.Max(maxSum, currentSum);
         }
 
-
-
-
-
-
-
+        Console.WriteLine("max sum:" + maxSum);
     }
 }
