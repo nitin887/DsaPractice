@@ -4,22 +4,8 @@
 
 
 
-
-### 4. Find Frequency of Characters
-
-**Concepts:** Hashing
-
-### 5. Remove Spaces from String
-
-**Concepts:** String Manipulation
-
----
-
 ## Intermediate
 
-### 6. Check Anagram
-
-**Concepts:** Hashing, Sorting
 
 ### 7. First Non-Repeating Character
 
